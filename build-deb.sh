@@ -13,7 +13,7 @@ export WGET=/bin/false
 
 ./configure --with-platform=efi \
             --disable-stubdom   \
-            --with-extra-qemuu-configure-args="--enable-spice --enable-usb-redir"
+            --with-extra-qemuu-configure-args="--enable-spice --enable-usb-redir --enable-sdl"
              
 
 make -j 12 debball

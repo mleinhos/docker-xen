@@ -13,6 +13,7 @@ RUN apt-get --quiet --yes update && \
 		m4 cmake gcc-multilib build-essential git-core seabios build-essential \
 		libspice-server-dev libspice-server1 libspice-protocol-dev             \
 		usbredirserver libusbredirhost-dev libusbredirhost1                    \
+		libsdl1.2-dev \
         pkg-config ca-certificates curl wget git libssl-dev software-properties-common bc && \
 	apt-get --quiet --yes build-dep xen && \
 	apt-get clean && \
