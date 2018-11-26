@@ -11,9 +11,9 @@ export WGET=/bin/false
 
 # If spice is enabled, then the build environment (docker?) needs spice packages.
 
-./configure --with-platform=efi \
+./configure --with-platform=bios \
             --disable-stubdom   \
             --with-extra-qemuu-configure-args="--enable-spice --enable-usb-redir"
              
 
-make -j 12 debball
+make -j 7 debball
