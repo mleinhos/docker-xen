@@ -3,7 +3,7 @@
 export FETCHER=/bin/false
 export WGET=/bin/false
 
-export CONCURRENCY_LEVEL=`grep model_name /proc/cpuinfo | wc -l`
+export CONCURRENCY_LEVEL=`grep "model name" /proc/cpuinfo | wc -l`
 
 ./configure --disable-docs --disable-stubdom \
 	--disable-qemu-traditional \
