@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 NAME=matt/build-xen
-REV=ubuntu-1804-spice
+REV=arm
 
 sudo docker build -t $NAME:$REV .

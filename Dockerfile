@@ -10,8 +10,8 @@ RUN apt-get --quiet --yes install libx11-dev ocaml-nox ocaml-findlib
 RUN apt-get --quiet --yes install ocaml-native-compilers libpixman-1-dev libsystemd-dev
 RUN apt-get --quiet --yes install texinfo libnl-3-dev libnl-utils libnl-cli-3-dev libbz2-dev libpci-dev
 RUN apt-get --quiet --yes install m4 cmake gcc-multilib build-essential git-core seabios build-essential
-RUN apt-get --quiet --yes install libspice-server-dev libspice-server1 libspice-protocol-dev
-RUN apt-get --quiet --yes install usbredirserver libusbredirhost-dev libusbredirhost1
+#RUN apt-get --quiet --yes install libspice-server-dev libspice-server1 libspice-protocol-dev
+#RUN apt-get --quiet --yes install usbredirserver libusbredirhost-dev libusbredirhost1
 RUN apt-get --quiet --yes install pkg-config ca-certificates  wget git libssl-dev software-properties-common bc
 
 # The following line doesn't work on Ubuntu 18.04, so we install the packages below, based on Xen's instructions abut building from source
@@ -26,6 +26,7 @@ RUN apt-get --quiet --yes install iasl libbz2-dev e2fslibs-dev git-core uuid-dev
 RUN apt-get --quiet --yes install gettext libpixman-1-dev libaio-dev markdown pandoc
 # Additional requirements discovered during build attempts
 RUN apt-get --quiet --yes install bin86 bcc lzma lzma-dev liblzma-dev liblzma5
+RUN apt-get --quiet --yes install gcc-arm-linux-gnueabi gcc-aarch64-linux-gnu
 
 RUN	apt-get clean
 RUN    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
