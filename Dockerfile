@@ -1,5 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Matt Leinhos <matthew.leinhos@gmail.com>
+
+ENV TZ=America/Chicago
+RUN echo $TZ > /etc/timezone
+RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
 
 # Specify amd64 arch across deb sources (?)
 RUN sed -e 's:deb h:deb [arch=amd64] h:' -e 's:deb-src h:deb-src [arch=amd64] h:' -i /etc/apt/sources.list && \
@@ -16,7 +20,7 @@ RUN apt-get --quiet --fix-missing --yes update
 RUN apt-get --quiet --yes install \
 bcc bin86 gawk bridge-utils wget libcurl4 libcurl4-openssl-dev \
 libssl-dev xz-utils lzma lzma-dev liblzma-dev liblzma5 \
-bzip2 module-init-tools transfig tgif \
+bzip2 transfig tgif \
 libx11-dev ocaml ocaml-nox ocaml-findlib \
 ocaml-native-compilers libpixman-1-dev libsystemd-dev \
 texinfo libnl-3-dev libnl-utils libnl-cli-3-dev libbz2-dev \
@@ -25,8 +29,7 @@ mercurial git git-core seabios \
 libspice-server-dev libspice-server1 libspice-protocol-dev \
 usbredirserver libusbredirhost-dev libusbredirhost1 \
 pkg-config ca-certificates software-properties-common \
-bc libpci-dev pciutils-dev libc6-dev zlib1g-dev \
-python python-dev python-twisted \
+bc libpci-dev pciutils libc6-dev zlib1g-dev \
 python3 python3-dev python3-twisted \
 libncurses5-dev \
 patch libvncserver-dev libsdl-dev libjpeg-dev \
